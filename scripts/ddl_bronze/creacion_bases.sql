@@ -17,10 +17,10 @@ CREATE TABLE bronze.crm_cust_info(
     cst_create_date DATE
 );
 
--- Creamos la tabla de prd_info 
-IF DROP_OBJECT_ID('bronze.prd_info', 'U') IS NOT NULL
-    DROP TABLE bronze.prd_info;
-CREATE TABLE bronze.prd_info(
+-- Creamos la tabla de crm_prd_info 
+IF OBJECT_ID('bronze.crm_prd_info', 'U') IS NOT NULL
+    DROP TABLE bronze.crm_prd_info;
+CREATE TABLE bronze.crm_prd_info(
     prd_id INT, 
     prd_key NVARCHAR(50),
     prd_nm NVARCHAR(100),
