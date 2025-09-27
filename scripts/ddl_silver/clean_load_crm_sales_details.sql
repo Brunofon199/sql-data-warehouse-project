@@ -15,6 +15,9 @@ create table silver.crm_sales_details(
     dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 
+print 'Truncamos los datos ...'
+TRUNCATE TABLE silver.crm_sales_details;
+print 'Insertamos datos ...'
 --  Insertamos el conjunto de datos 
 
 insert into silver.crm_sales_details (
