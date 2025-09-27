@@ -1,5 +1,5 @@
 CREATE OR ALTER PROCEDURE silver.load_silver
-AS -- Se agregó la palabra clave AS
+AS 
 BEGIN 
     -- Declaramos las variables para medir el tiempo de ejecución
     DECLARE @start_time DATETIME, @end_time DATETIME, @start_batch_time DATETIME, @end_batch_time DATETIME;
@@ -110,12 +110,12 @@ BEGIN
         -- Tabla: silver.erp_loc_a101
         ------------------------------------------------------------
         PRINT('------------------------------------------------------');
-        PRINT('Procesando tabla: silver.erp_loc_a101'); -- Corregido de crm_loc_a101
+        PRINT('Procesando tabla: silver.erp_loc_a101');
         PRINT('------------------------------------------------------');
         SET @start_time = GETDATE();
 
-        PRINT('TRUNCATE TABLE silver.erp_loc_a101;'); -- Corregido de crm_loc_a101
-        TRUNCATE TABLE silver.erp_loc_a101; -- Corregido de crm_loc_a101
+        PRINT('TRUNCATE TABLE silver.erp_loc_a101;'); 
+        TRUNCATE TABLE silver.erp_loc_a101; 
 
         PRINT('INSERTANDO DATOS TRANSFORMADOS EN silver.erp_loc_a101...');
         INSERT INTO silver.erp_loc_a101(cid, cntry)
@@ -134,7 +134,7 @@ BEGIN
         PRINT('------------------------------------------------------');
         SET @start_time = GETDATE();
 
-        PRINT('TRUNCATE TABLE silver.erp_px_cat_g1v2;'); -- CORREGIDO: Apuntaba a crm_loc_a101
+        PRINT('TRUNCATE TABLE silver.erp_px_cat_g1v2;'); 
         TRUNCATE TABLE silver.erp_px_cat_g1v2;
 
         PRINT('INSERTANDO DATOS TRANSFORMADOS EN silver.erp_px_cat_g1v2...');
