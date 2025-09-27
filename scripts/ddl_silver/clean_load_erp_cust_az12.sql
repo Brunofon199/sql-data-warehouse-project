@@ -1,5 +1,7 @@
 -- Limpiamos nuestros datos en la tabla de erp_cust_az12
-
+print 'Truncamos los datos ...'
+TRUNCATE TABLE silver.erp_cust_az12;
+print 'Insertamos datos ...'
 insert into silver.erp_cust_az12(
     cid,
     bdate,
@@ -19,4 +21,4 @@ select
         WHEN 'MALE' then 'Male'
         else 'n/a'
     end as gender,
-from bronze.erp_cust_az12
+from bronze.erp_cust_az12;
