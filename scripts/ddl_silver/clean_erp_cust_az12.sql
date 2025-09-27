@@ -12,5 +12,11 @@ select
     CASE WHEN bdate < '1924-01-01' OR bdate > GETDATE() THEN NULL
         ELSE bdate 
     end as bdate, -- Colocamos cumpleaños futuros como nulos 
-    trim(gender) as gender
+    CASE UPPER(TRIM(gender)) -- Cambiamos siglas por lenguaje conocido
+        WHEN 'F' THEN 'Female'
+        when 'FEMALE' THEN 'Female'
+        WHEN 'M' THEN 'Male'
+        WHEN 'MALE' then 'Male'
+        else 'n/a'
+    end as gender,
 from bronze.erp_cust_az12
