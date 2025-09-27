@@ -14,6 +14,9 @@ create table silver.crm_prd_info (
     dwh_crete_date DATETIME2 DEFAULT GETDATE()
 );
 
+print 'Truncamos los datos ...'
+TRUNCATE TABLE silver.crm_prd_info;
+print 'Insertamos datos ...'
 -- Insertamos nuestros datos 
 INSERT INTO silver.crm_prd_info(
     prd_id,
