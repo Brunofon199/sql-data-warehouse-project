@@ -2,6 +2,10 @@
 -- Se eliminan registros nulos y se estandarizan campos
 -- Se mantiene el registro más reciente por cst_id
 
+-- Truncamos la tabla para evitar duplicados 
+print 'Truncamos los datos ...'
+TRUNCATE TABLE silver.crm_cust_info;
+print 'Insertamos datos ...'
 insert into silver.crm_cust_info (
     cst_id,
     cst_key,
