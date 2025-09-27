@@ -1,6 +1,9 @@
 -- Insertamos datos limios a la tabla silver.erp_loc_a101
 -- Limpiamos el campo cid y cntry
 -- Eliminamos guiones del campo cid
+print 'Truncamos los datos ...'
+TRUNCATE TABLE silver.crm_loc_a101;
+print 'Insertamos datos ...'
 insert into silver.erp_loc_a101(
     cid,
     cntry
